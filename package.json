@@ -1,0 +1,39 @@
+{
+  "name": "big-mac-test",
+  "version": "1.0.0",
+  "description": "App for calculating how many big macs can be purchased with X amount of money in your local currency",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "webpack --mode production --config webpack.config.js --watch",
+    "start": "node ./server/index.js",
+    "dev": "nodemon ./server/index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/chandra-nguyen/big-mac-test.git"
+  },
+  "author": "Chandra Nguyen",
+  "license": "UNLICENSED",
+  "bugs": {
+    "url": "https://github.com/chandra-nguyen/big-mac-test/issues"
+  },
+  "homepage": "https://github.com/chandra-nguyen/big-mac-test#readme",
+  "devDependencies": {
+    "@babel/core": "^7.11.6",
+    "@babel/preset-env": "^7.11.5",
+    "@babel/preset-react": "^7.10.4",
+    "babel-loader": "^8.1.0",
+    "webpack": "^4.44.2",
+    "webpack-cli": "^3.3.12"
+  },
+  "dependencies": {
+    "axios": "^0.20.0",
+    "body-parser": "^1.19.0",
+    "cors": "^2.8.5",
+    "express": "^4.17.1",
+    "nodemon": "^2.0.4",
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1"
+  }
+}

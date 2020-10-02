@@ -12,18 +12,9 @@ app.use(bodyParser.urlencoded({ extended: false }))
 app.use(bodyParser.json())
 
 app.get(`/api/localCountry`, (req, res) => {
-  // axios.get(`https://api.ipify.org?format=json`)
-  // .then(results => results.data.ip)
-  // .catch(err => res.status(500).send(err))
-  // .then(ip => {
-  //   axios.get(`https://ipvigilante.com/json/${ip}/country_name`)
-  //   .then( results => {
-  //     sessionStorage.setItem(localCountry, results.data.data.country_name)
-  //     res.send(results.data.data.country_name)
-  //   })
-  //   .catch( err => res.status(500).send(err));
-  // })
-  res.send('United States')
+  axios.get(`http://ip-api.com/json/?fields=country`)
+  .then(results => res.send(results.data.country))
+  .catch(err => res.status(500).send(err))
 })
 
 app.get(`/api/bigmacs/:country`, (req, res) => {
@@ -47,6 +38,10 @@ app.get(`/api/randomCountry`, (req, res) => {
   .then(csv => {
     let lines = csv.split(/\r\n|\n/)
     let randomNumber = Math.floor(Math.random() * 196)
+    let countryInfo = lines[randomNumber].split(',')
+    if (countryInfo[0] === req.params.localCountry) {
+      randomNumber = Math.floor(Math.random() * 196)
+    }
     res.send(lines[randomNumber])
   })
 })

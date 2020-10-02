@@ -4,7 +4,7 @@
   "description": "App for calculating how many big macs can be purchased with X amount of money in your local currency",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "jest",
     "build": "webpack --mode production --config webpack.config.js --watch",
     "start": "node ./server/index.js",
     "dev": "nodemon ./server/index.js"
@@ -24,17 +24,21 @@
     "@babel/preset-env": "^7.11.5",
     "@babel/preset-react": "^7.10.4",
     "babel-loader": "^8.1.0",
-    "jest": "^26.4.2",
+    "enzyme": "^3.11.0",
+    "enzyme-adapter-react-16": "^1.15.5",
     "webpack": "^4.44.2",
     "webpack-cli": "^3.3.12"
   },
   "dependencies": {
+    "@testing-library/react": "^11.0.4",
     "axios": "^0.20.0",
     "body-parser": "^1.19.0",
     "cors": "^2.8.5",
     "express": "^4.17.1",
+    "jest": "^26.4.2",
     "nodemon": "^2.0.4",
     "react": "^16.13.1",
-    "react-dom": "^16.13.1"
+    "react-dom": "^16.13.1",
+    "sinon": "^9.1.0"
   }
 }
